@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641228, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -192,17 +192,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8986565970340721476, guid: bb3f4757f770c48c4859febb1adcbd35, type: 3}
+      propertyPath: isRandom
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8986565970340721476, guid: bb3f4757f770c48c4859febb1adcbd35, type: 3}
       propertyPath: songList.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8986565970340721476, guid: bb3f4757f770c48c4859febb1adcbd35, type: 3}
       propertyPath: songList.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 20a849e64b31947caa47e0743d2b8f1c, type: 3}
+      objectReference: {fileID: 8300000, guid: 959adda42c8e617439bd10afdd6fbd7d, type: 3}
     - target: {fileID: 8986565970340721476, guid: bb3f4757f770c48c4859febb1adcbd35, type: 3}
       propertyPath: songList.Array.data[1]
       value: 
-      objectReference: {fileID: 8300000, guid: 6314128468b6544a6ba41b26c4c049bd, type: 3}
+      objectReference: {fileID: 8300000, guid: 9109494d5c0b8584e9f0e3251aab951e, type: 3}
     - target: {fileID: 8986565970340721476, guid: bb3f4757f770c48c4859febb1adcbd35, type: 3}
       propertyPath: songList.Array.data[2]
       value: 
@@ -468,9 +472,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathZone: {fileID: 1522036252}
   player: {fileID: 0}
-  audioClip1: {fileID: 8300000, guid: 76c218b17771a4361a0a317f203d863a, type: 3}
-  audioClip2: {fileID: 8300000, guid: a9addc261e0f1478fa10e88f6b118e68, type: 3}
-  audioClip4: {fileID: 8300000, guid: 684663013b0c04e35b3cbd2f2b745a2e, type: 3}
+  audioClip1: {fileID: 8300000, guid: 7a74d301aff25684c9aa6bde6ed1240b, type: 3}
+  audioClip2: {fileID: 8300000, guid: 79a096614f96f4642abad39aa31bb895, type: 3}
+  audioClip4: {fileID: 8300000, guid: 8c0ce3ba8a765504db0d8b97c50215e2, type: 3}
   audioSource: {fileID: 1522036253}
 --- !u!1 &1379744875 stripped
 GameObject:
