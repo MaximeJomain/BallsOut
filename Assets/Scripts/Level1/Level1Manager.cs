@@ -72,7 +72,7 @@ public class Level1Manager : MonoBehaviour
 
     IEnumerator WaitIntro()
     {
-        yield return new WaitForSeconds(22.0f);
+        yield return new WaitForSeconds(16.0f);
 
         player.GetComponent<PlayerController>().enabled = true;
     }
