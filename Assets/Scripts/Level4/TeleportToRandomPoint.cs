@@ -17,10 +17,16 @@ public class TeleportToRandomPoint : MonoBehaviour
     [SerializeField]
     private AudioClip audioClip;
 
-    
+    [SerializeField]
+    private List<AudioClip> audioClipList = new List<AudioClip>();
+
     private bool isTeleportActivate = false;
 
     private bool alreadyTeleported = false;
+
+    private float rate = 0.1f;
+
+    private float lastCall;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +44,14 @@ public class TeleportToRandomPoint : MonoBehaviour
     {
         if (isTeleportActivate && !alreadyTeleported)
         {
+            if ((Time.time - lastCall) >= (1f / rate))
+            {
+                lastCall = Time.time;
+                audioSource.clip = GetRandomSound(audioClipList);
+                audioSource.Play();
+            }
+            
+
             if (Input.GetKeyDown(KeyCode.F))
             {
                 GetRandomPoint(randomPointList);
@@ -53,7 +67,16 @@ public class TeleportToRandomPoint : MonoBehaviour
         int randomNum = Random.Range(0, listToRandomize.Count);
         GameObject randomPoint = listToRandomize[randomNum];
 
+        player = GameObject.FindWithTag("Player");
+
         player.transform.position = randomPoint.transform.position;
+    }
+
+    private AudioClip GetRandomSound(List<AudioClip> listToRandomize)
+    {
+        int randomNum = Random.Range(0, listToRandomize.Count);
+        AudioClip randomSound = listToRandomize[randomNum];
+        return randomSound;
     }
 
     private void OnTriggerStay(Collider other)
@@ -61,8 +84,19 @@ public class TeleportToRandomPoint : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isTeleportActivate = true;
-            audioSource.clip = audioClip;
-            audioSource.Play();
+            if (!alreadyTeleported)
+            {
+                StartCoroutine(StartTrollSound());
+            }
         }
+    }
+
+    IEnumerator StartTrollSound()
+    {
+        yield return new WaitForSeconds(3.0f);
+        audioSource.clip = audioClip;
+        audioSource.Play();
+        lastCall = Time.time;
+
     }
 }
