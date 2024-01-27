@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     public CinemachineFreeLook freeLookCamera;
     public float movementSpeed, cameraSpeed;
+    public bool invertControls;
     
     
     private Vector2 moveInput, lookInput;
@@ -18,13 +19,20 @@ public class PlayerController : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
         mainCamera = Camera.main;
     }
-    
+
+    private void Start()
+    {
+        invertControls = false;
+    }
+
     private void FixedUpdate()
     {
         if (moveInput != Vector2.zero)
         {
             Quaternion targetRotation = Quaternion.Euler(0f, mainCamera.transform.rotation.eulerAngles.y, 0f);
-            Vector3 moveDirection = targetRotation * new Vector3(moveInput.x, 0f, moveInput.y);
+
+            Vector3 movementInput = invertControls ? new Vector3(-moveInput.x, 0f, -moveInput.y) : new Vector3(moveInput.x, 0f, moveInput.y);
+            Vector3 moveDirection = targetRotation * movementInput;
             
             // Vector3 movement = new Vector3(moveInput.x, 0f, moveInput.y);
             rigidbody.velocity = moveDirection * movementSpeed;
@@ -35,8 +43,6 @@ public class PlayerController : MonoBehaviour
     {
         if (lookInput != Vector2.zero)
         {
-            Debug.Log("Look : " + lookInput);
-        
             lookInput.x *= 180f; 
             freeLookCamera.m_XAxis.Value += lookInput.x * cameraSpeed * Time.deltaTime;
             freeLookCamera.m_YAxis.Value += lookInput.y * cameraSpeed * Time.deltaTime;
