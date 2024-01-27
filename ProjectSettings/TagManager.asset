@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Wall
   - Plain
+  - BlueBall
+  - RedBall
+  - SpawnPlayer
   layers:
   - Default
   - TransparentFX

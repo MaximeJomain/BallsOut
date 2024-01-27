@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     public CinemachineFreeLook freeLookCamera;
     public float movementSpeed, cameraSpeed;
-    public Transform respawnPoint;
+    public Material blueMaterial, redMaterial;
     
     [HideInInspector]
     public bool invertControls, canMove, canJump, eventBlockTime;
@@ -16,17 +16,24 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveInput, lookInput;
     private new Rigidbody rigidbody;
     private Camera mainCamera;
+    private MeshRenderer meshRenderer;
+    private SpawnPlayer respawnPoint;
 
     private void Awake()
     {
+        Physics.gravity = new Vector3(0f, -40f, 0f);
         rigidbody = GetComponent<Rigidbody>();
         mainCamera = Camera.main;
         canMove = true;
         eventBlockTime = false;
+        meshRenderer = GetComponent<MeshRenderer>();
+        respawnPoint = GameObject.FindGameObjectWithTag("SpawnPlayer").GetComponent<SpawnPlayer>();
     }
 
     private void Start()
     {
+        meshRenderer.material = PlayerPrefs.GetInt("PlayerColor", 0) == 0 ? blueMaterial : redMaterial;
+        PlayerPrefs.GetInt("PlayerColor", 0);
         invertControls = false;
         canJump = false;
     }
@@ -71,7 +78,7 @@ public class PlayerController : MonoBehaviour
     {
         lookInput = context.ReadValue<Vector2>().normalized;
     }
-
+    
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Plain") && !eventBlockTime)
@@ -83,19 +90,22 @@ public class PlayerController : MonoBehaviour
             canMove = false;
         }
     }
-    // public void Jump()
-    // {
-    //     if (canJump)
-    //     {
-    //         Destroy(gameObject);
-    //         StartCoroutine(RespawnPlayer());
-    //     }
-    // }
-    //
-    // IEnumerator RespawnPlayer()
-    // {
-    //     yield return new WaitForSeconds(3f);
-    //
-    //     respawnPoint.GetComponent<SpawnPlayer>().InstantiatePlayer();
-    // }
+    
+    private void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject.CompareTag("Plain"))
+        {
+            canMove = false;
+        }
+    }
+    
+    public void Jump()
+    {
+        if (canJump)
+        {
+            canJump = false;
+            respawnPoint.RespawnPlayer();
+            Destroy(gameObject);
+        }
+    }
 }

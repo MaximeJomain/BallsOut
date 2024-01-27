@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4371746540196229646}
   - component: {fileID: 3631945138461120606}
-  - component: {fileID: 6641415982806009675}
+  - component: {fileID: 3034403444932899365}
   m_Layer: 0
   m_Name: SpawnPoint
   m_TagString: Untagged
@@ -45,8 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78a943f22435448608cf0721202ff9c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventScriptList: []
+  respawnTime: 0
   playerPrefab: {fileID: 1771489509401561049, guid: 12e52097bb513e346972d096c5e4b3ec, type: 3}
---- !u!82 &6641415982806009675
+--- !u!82 &3034403444932899365
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -56,7 +58,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 4cb83541bbd027546be0f1088ce535e7, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
