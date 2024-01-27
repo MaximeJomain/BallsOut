@@ -8,10 +8,10 @@ public class PlayerController : MonoBehaviour
 {
     public CinemachineFreeLook freeLookCamera;
     public float movementSpeed, cameraSpeed;
-    public bool invertControls;
-    public bool canMove;
-    public bool canJump;
     public Transform respawnPoint;
+    
+    [HideInInspector]
+    public bool invertControls, canMove, canJump;
     
     private Vector2 moveInput, lookInput;
     private new Rigidbody rigidbody;
@@ -71,19 +71,19 @@ public class PlayerController : MonoBehaviour
         lookInput = context.ReadValue<Vector2>().normalized;
     }
 
-    public void Jump()
-    {
-        if (canJump)
-        {
-            Destroy(gameObject);
-            StartCoroutine(RespawnPlayer());
-        }
-    }
-    
-    IEnumerator RespawnPlayer()
-    {
-        yield return new WaitForSeconds(3f);
-
-        respawnPoint.GetComponent<SpawnPlayer>().InstantiatePlayer();
-    }
+    // public void Jump()
+    // {
+    //     if (canJump)
+    //     {
+    //         Destroy(gameObject);
+    //         StartCoroutine(RespawnPlayer());
+    //     }
+    // }
+    //
+    // IEnumerator RespawnPlayer()
+    // {
+    //     yield return new WaitForSeconds(3f);
+    //
+    //     respawnPoint.GetComponent<SpawnPlayer>().InstantiatePlayer();
+    // }
 }

@@ -275,8 +275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: a202e9c7318d1144e90352a7a22c1984,
-    type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: a202e9c7318d1144e90352a7a22c1984, type: 3}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -365,6 +364,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 177ee21a-a521-4c42-bfcd-dd723515fe7e
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 66cc536a-9d63-418d-8f12-9c1fd3efe4fe
+    m_ActionName: Player/Jump[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -385,8 +388,10 @@ MonoBehaviour:
   freeLookCamera: {fileID: 9021889047609193542}
   movementSpeed: 4
   cameraSpeed: 1
+  respawnPoint: {fileID: 0}
   invertControls: 0
   canMove: 0
+  canJump: 0
 --- !u!1 &3505785632651620892
 GameObject:
   m_ObjectHideFlags: 3
@@ -412,8 +417,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3505785632651620892}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2514289, y: 0.21905024, z: -0.058532275, w: 0.9409435}
-  m_LocalPosition: {x: 0.0000009536743, y: 0, z: -0.0000014305115}
+  m_LocalRotation: {x: 0.12939784, y: 0.22472538, z: -0.03012359, w: 0.9653224}
+  m_LocalPosition: {x: 0, y: 0, z: -0.00000023841858}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -491,8 +496,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5741964762213613506}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2343174, y: 0.22007608, z: -0.054548748, w: 0.94534993}
-  m_LocalPosition: {x: 0.0000009536743, y: 0, z: -0.0000014305115}
+  m_LocalRotation: {x: 0.111864194, y: 0.22523488, z: -0.02604179, w: 0.967511}
+  m_LocalPosition: {x: 0, y: 0, z: -0.00000023841858}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -570,8 +575,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6245946877641584733}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.26850262, y: 0.21794933, z: -0.06250701, w: 0.9362144}
-  m_LocalPosition: {x: 0.00000166893, y: 0, z: -0.000002861023}
+  m_LocalRotation: {x: 0.14693518, y: 0.22414029, z: -0.034206256, w: 0.96280897}
+  m_LocalPosition: {x: 0, y: 0, z: -0.00000023841858}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -650,7 +655,7 @@ Transform:
   m_GameObject: {fileID: 6403064167132986429}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.7666456, y: 2.4999998, z: -3.58873}
+  m_LocalPosition: {x: -1.177762, y: 0.8333334, z: -2.3924859}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -754,11 +759,11 @@ MonoBehaviour:
   m_SplineCurvature: 0.2
   m_Orbits:
   - m_Height: 4.5
-    m_Radius: 10
+    m_Radius: 12
   - m_Height: 2.5
     m_Radius: 10
   - m_Height: 0.4
-    m_Radius: 10
+    m_Radius: 8
   m_LegacyHeadingBias: 3.4028235e+38
   m_Rigs:
   - {fileID: 8502329293681039880}
