@@ -12,7 +12,7 @@ public class DeathZone : MonoBehaviour
     [SerializeField]
     private bool isFirstLvl;
 
-    private int deathCount = 0;
+    public int deathCount = 0;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -24,12 +24,12 @@ public class DeathZone : MonoBehaviour
             {
                 deathCount++;
 
-                if (deathCount < 3)
+                if (deathCount < 2)
                 {
                     StartCoroutine(RespawnPlayer());
                 } else
                 {
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                    StartCoroutine(LoadNextScene());
                 }
             } else
             {
@@ -43,5 +43,12 @@ public class DeathZone : MonoBehaviour
         yield return new WaitForSeconds(3f);
 
         spawnPoint.GetComponent<SpawnPlayer>().InstantiatePlayer();
+    }
+
+    IEnumerator LoadNextScene()
+    {
+        yield return new WaitForSeconds(12f);
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
