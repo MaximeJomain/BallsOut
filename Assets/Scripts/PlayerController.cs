@@ -1,5 +1,6 @@
 using Cinemachine;
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public float movementSpeed, cameraSpeed;
     public bool invertControls;
     public bool canMove;
+    public bool canJump;
+    public Transform respawnPoint;
     
     private Vector2 moveInput, lookInput;
     private new Rigidbody rigidbody;
@@ -18,11 +21,13 @@ public class PlayerController : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody>();
         mainCamera = Camera.main;
+        canMove = true;
     }
 
     private void Start()
     {
         invertControls = false;
+        canJump = false;
     }
 
     private void FixedUpdate()
@@ -51,6 +56,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void Die()
+    {
+        
+    }
+
     public void Move(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
@@ -59,5 +69,21 @@ public class PlayerController : MonoBehaviour
     public void Look(InputAction.CallbackContext context)
     {
         lookInput = context.ReadValue<Vector2>().normalized;
+    }
+
+    public void Jump()
+    {
+        if (canJump)
+        {
+            Destroy(gameObject);
+            StartCoroutine(RespawnPlayer());
+        }
+    }
+    
+    IEnumerator RespawnPlayer()
+    {
+        yield return new WaitForSeconds(3f);
+
+        respawnPoint.GetComponent<SpawnPlayer>().InstantiatePlayer();
     }
 }
