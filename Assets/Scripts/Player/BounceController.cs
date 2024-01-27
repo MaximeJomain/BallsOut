@@ -10,10 +10,16 @@ public class BounceController : MonoBehaviour
 
    private PlayerController playerController;
    private Camera mainCamera;
+   
+   [SerializeField]
+   private AudioClip audioClip1;
 
-
+   [SerializeField]
+   private AudioSource audioSource;
+   
    private void Awake()
    {
+       audioSource.clip = audioClip1;
        mainCamera = Camera.main;
        rb = GetComponent<Rigidbody>();
        playerController = GetComponent<PlayerController>();
@@ -24,6 +30,7 @@ public class BounceController : MonoBehaviour
     {
         if( other.gameObject.CompareTag("Wall"))
         {
+            audioSource.Play();
             playerController.canMove = false;
             const float bounceUp = -1f;
             const float bounceBack = 1250f;
@@ -32,6 +39,7 @@ public class BounceController : MonoBehaviour
             Vector3 bounceVector = new Vector3((forward).x, bounceUp, (forward).z);
             rb.AddForce(-bounceVector * bounceBack, ForceMode.Impulse);
             rb.angularVelocity = Vector3.zero;
+            
         }
     }
 }
