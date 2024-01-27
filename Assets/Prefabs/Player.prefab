@@ -384,6 +384,8 @@ MonoBehaviour:
   freeLookCamera: {fileID: 9021889047609193542}
   movementSpeed: 4
   cameraSpeed: 1
+  invertControls: 0
+  canMove: 1
 --- !u!1 &3505785632651620892
 GameObject:
   m_ObjectHideFlags: 3
