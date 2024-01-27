@@ -382,7 +382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   freeLookCamera: {fileID: 9021889047609193542}
-  movementSpeed: 4
+  movementSpeed: 10
   cameraSpeed: 1
   invertControls: 0
   canMove: 1
