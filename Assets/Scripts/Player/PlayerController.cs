@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        Physics.gravity = new Vector3(0f, -40f, 0f);
         rigidbody = GetComponent<Rigidbody>();
         mainCamera = Camera.main;
         canMove = true;
@@ -77,6 +78,13 @@ public class PlayerController : MonoBehaviour
         lookInput = context.ReadValue<Vector2>().normalized;
     }
 
+    private void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject.CompareTag("Plain"))
+        {
+            canMove = false;
+        }
+    }
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Plain") && !eventBlockTime)
@@ -88,6 +96,7 @@ public class PlayerController : MonoBehaviour
             canMove = false;
         }
     }
+
     // public void Jump()
     // {
     //     if (canJump)
