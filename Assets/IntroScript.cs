@@ -1,6 +1,5 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,6 +8,7 @@ public class IntroScript : MonoBehaviour
     public Light blueLight, redLight;
     public AudioSource audioSource;
     public AudioClip audio1, audio2;
+    public TMP_Text selectionText;
     
     private Camera mainCamera;
     private bool canInteract;
@@ -21,6 +21,7 @@ public class IntroScript : MonoBehaviour
     private void Start()
     {
         canInteract = false;
+        selectionText.gameObject.SetActive(false);
         StartCoroutine(AudioCoroutine());
     }
 
@@ -68,5 +69,6 @@ public class IntroScript : MonoBehaviour
         
         yield return new WaitForSeconds(audioSource.clip.length);
         canInteract = true;
+        selectionText.gameObject.SetActive(true);
     }
 }

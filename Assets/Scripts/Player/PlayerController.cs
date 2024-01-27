@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public CinemachineFreeLook freeLookCamera;
     public float movementSpeed, cameraSpeed;
     public Transform respawnPoint;
+    public Material blueMaterial, redMaterial;
     
     [HideInInspector]
     public bool invertControls, canMove, canJump, eventBlockTime;
@@ -16,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveInput, lookInput;
     private new Rigidbody rigidbody;
     private Camera mainCamera;
+    private MeshRenderer meshRenderer;
 
     private void Awake()
     {
@@ -23,10 +25,13 @@ public class PlayerController : MonoBehaviour
         mainCamera = Camera.main;
         canMove = true;
         eventBlockTime = false;
+        meshRenderer = GetComponent<MeshRenderer>();
     }
 
     private void Start()
     {
+        meshRenderer.material = PlayerPrefs.GetInt("PlayerColor", 0) == 0 ? blueMaterial : redMaterial;
+        PlayerPrefs.GetInt("PlayerColor", 0);
         invertControls = false;
         canJump = false;
     }

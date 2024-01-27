@@ -390,6 +390,8 @@ MonoBehaviour:
   movementSpeed: 10
   cameraSpeed: 1
   respawnPoint: {fileID: 0}
+  blueMaterial: {fileID: 2100000, guid: af388ac246772d04daedaa22ac314257, type: 2}
+  redMaterial: {fileID: 2100000, guid: 98922bbb326f9d84fb94b609fa3f5b99, type: 2}
   invertControls: 0
   canMove: 0
   canJump: 0
