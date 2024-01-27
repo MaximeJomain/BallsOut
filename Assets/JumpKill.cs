@@ -7,13 +7,13 @@ public class JumpKill : MonoBehaviour
 {
     private PlayerController player;
 
-    private void Update()
-    {
-        if (!player)
-        {
-            throw new NotImplementedException();
-        }
-    }
+    // private void Update()
+    // {
+    //     if (!player)
+    //     {
+    //         throw new NotImplementedException();
+    //     }
+    // }
 
     private void OnTriggerEnter(Collider other)
     {
