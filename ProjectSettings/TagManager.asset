@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: [Wall, Plain, BlueBall, RedBall]
+  tags:
+  - Wall
+  - Plain
+  - BlueBall
+  - RedBall
+  - SpawnPlayer
   layers:
   - Default
   - TransparentFX

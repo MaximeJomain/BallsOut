@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
         canMove = true;
         eventBlockTime = false;
         meshRenderer = GetComponent<MeshRenderer>();
-        respawnPoint = GameObject.Find("Spawn Player").GetComponent<SpawnPlayer>();
+        respawnPoint = GameObject.FindGameObjectWithTag("SpawnPlayer").GetComponent<SpawnPlayer>();
     }
 
     private void Start()
