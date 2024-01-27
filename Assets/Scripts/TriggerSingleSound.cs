@@ -9,7 +9,7 @@ public class TriggerSingleSound : MonoBehaviour
 
     [SerializeField]
     private AudioClip audioClip;
-    // Start is called before the first frame update
+
     void Awake()
     {
         audioSource = GetComponent<AudioSource>();
