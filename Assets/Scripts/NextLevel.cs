@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class NextLevel : MonoBehaviour
 {
+    
+    public GameObject player;
 
     [SerializeField]
     private int winSoundDuration;
@@ -24,6 +26,11 @@ public class NextLevel : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            player = GameObject.FindWithTag("Player");
+            player.transform.position = player.transform.localPosition;
+            PlayerController controller = player.GetComponent<PlayerController>();
+            controller.enabled = false;
+            controller.eventBlockTime = true;
             StartCoroutine(LoadNextLevel());
         }
     }
