@@ -24,7 +24,6 @@ public class DeathZone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Dead");
             GameObject playerGameObject = other.gameObject;
             Destroy(playerGameObject);
             StartCoroutine(RespawnPlayer());
