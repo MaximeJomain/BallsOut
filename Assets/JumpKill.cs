@@ -5,7 +5,15 @@ using UnityEngine;
 
 public class JumpKill : MonoBehaviour
 {
-    public PlayerController player;
+    private PlayerController player;
+
+    // private void Update()
+    // {
+    //     if (!player)
+    //     {
+    //         throw new NotImplementedException();
+    //     }
+    // }
 
     private void OnTriggerEnter(Collider other)
     {

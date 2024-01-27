@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+interface EventScript
+{
+    public void SetPlayerInstance(PlayerController playerInstance);
+}
+
 public class SpawnPlayer : MonoBehaviour
 {
     [SerializeField]
@@ -10,12 +15,6 @@ public class SpawnPlayer : MonoBehaviour
     void Awake()
     {
         InstantiatePlayer();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void InstantiatePlayer()
