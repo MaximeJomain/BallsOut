@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class TeleportToRandomPoint : MonoBehaviour
 {
@@ -10,6 +12,12 @@ public class TeleportToRandomPoint : MonoBehaviour
 
     private GameObject player;
 
+    private AudioSource audioSource;
+
+    [SerializeField]
+    private AudioClip audioClip;
+
+    
     private bool isTeleportActivate = false;
 
     private bool alreadyTeleported = false;
@@ -18,6 +26,11 @@ public class TeleportToRandomPoint : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+    }
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -48,6 +61,8 @@ public class TeleportToRandomPoint : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isTeleportActivate = true;
+            audioSource.clip = audioClip;
+            audioSource.Play();
         }
     }
 }
