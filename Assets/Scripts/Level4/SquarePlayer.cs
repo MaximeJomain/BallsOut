@@ -17,7 +17,6 @@ public class SquarePlayer : MonoBehaviour
     {
         audioSource.Play();
         player.GetComponent<MeshFilter>().mesh = squareMesh;
-        player.canMove = false;
         player.eventBlockTime = true;
         Invoke(nameof(ResetToSphere), timeToReset);
     }
@@ -25,7 +24,6 @@ public class SquarePlayer : MonoBehaviour
     private void ResetToSphere()
     {
         player.GetComponent<MeshFilter>().mesh = sphereMesh;
-        player.canMove = true;
         player.eventBlockTime = false;
     }
 }

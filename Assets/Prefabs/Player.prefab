@@ -387,13 +387,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   freeLookCamera: {fileID: 9021889047609193542}
-  movementSpeed: 6
+  movementSpeed: 10
   cameraSpeed: 1
+  respawnPoint: {fileID: 0}
   invertControls: 0
   canMove: 0
-  squareTime: 0
   canJump: 0
-  respawnPoint: {fileID: 0}
+  eventBlockTime: 0
 --- !u!114 &7410378367215571176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -773,11 +773,11 @@ MonoBehaviour:
   m_SplineCurvature: 0.2
   m_Orbits:
   - m_Height: 4.5
-    m_Radius: 10
+    m_Radius: 12
   - m_Height: 2.5
     m_Radius: 10
   - m_Height: 0.4
-    m_Radius: 10
+    m_Radius: 8
   m_LegacyHeadingBias: 3.4028235e+38
   m_Rigs:
   - {fileID: 8502329293681039880}
