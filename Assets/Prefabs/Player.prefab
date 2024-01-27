@@ -386,7 +386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   freeLookCamera: {fileID: 9021889047609193542}
-  movementSpeed: 4
+  movementSpeed: 10
   cameraSpeed: 1
   respawnPoint: {fileID: 0}
   invertControls: 0
