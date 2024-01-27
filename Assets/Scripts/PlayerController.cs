@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public CinemachineFreeLook freeLookCamera;
     public float movementSpeed, cameraSpeed;
     public bool invertControls;
-    
+    public bool canMove;
     
     private Vector2 moveInput, lookInput;
     private new Rigidbody rigidbody;
@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!canMove) return;
+        
         if (moveInput != Vector2.zero)
         {
             Quaternion targetRotation = Quaternion.Euler(0f, mainCamera.transform.rotation.eulerAngles.y, 0f);
