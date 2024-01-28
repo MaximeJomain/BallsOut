@@ -104,8 +104,14 @@ public class PlayerController : MonoBehaviour
         if (canJump)
         {
             canJump = false;
-            respawnPoint.RespawnPlayer();
-            Destroy(gameObject);
+            Level3 level3 = GameObject.Find("Level 3 Manager").GetComponent<Level3>();
+            if (!level3.hasJumped)
+            {
+                level3.PlayAudioCoroutine(2);
+                level3.hasJumped = true;
+                respawnPoint.RespawnPlayer();
+                Destroy(gameObject);
+            }
         }
     }
 }
