@@ -507,6 +507,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: SpawnPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 3034403444932899365, guid: 0a38e3f8b7fd64c6db35c281600cae79, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4371746540196229646, guid: 0a38e3f8b7fd64c6db35c281600cae79, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.7
