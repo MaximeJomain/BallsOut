@@ -19,7 +19,15 @@ public class DeathZone : MonoBehaviour
 
     private void Awake()
     {
-        _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        if (GameObject.Find("GameManager") != null)
+        {
+            _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        }
+        else
+        {
+            var gameManagerObject = new GameObject("GameManager");
+            _gameManager = gameManagerObject.AddComponent<GameManager>();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
