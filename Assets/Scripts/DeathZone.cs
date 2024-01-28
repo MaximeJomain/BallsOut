@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class DeathZone : MonoBehaviour
 {
 
+    private GameManager _gameManager;
+    
     [SerializeField]
     private GameObject spawnPoint;
 
@@ -13,6 +16,11 @@ public class DeathZone : MonoBehaviour
     private bool isFirstLvl;
 
     public int deathCount = 0;
+
+    private void Awake()
+    {
+        _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -22,8 +30,9 @@ public class DeathZone : MonoBehaviour
             Destroy(playerGameObject);
             if (isFirstLvl)
             {
+                _gameManager.deathCount = deathCount;
                 deathCount++;
-
+                _gameManager.deathCount = deathCount;
                 if (deathCount < 2)
                 {
                     StartCoroutine(RespawnPlayer());

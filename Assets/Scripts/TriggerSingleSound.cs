@@ -7,6 +7,7 @@ public class TriggerSingleSound : MonoBehaviour
     public AudioClip audioClip;
     public bool destroyAfterPlay;
 
+    
     private AudioSource audioSource;
     private Collider triggerCollider;
     
