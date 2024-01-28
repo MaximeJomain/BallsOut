@@ -7,8 +7,10 @@ public class IntroScript : MonoBehaviour
 {
     public Light blueLight, redLight;
     public AudioSource audioSource;
-    public AudioClip audio1, audio2;
+    public AudioSource audioSource2;
+    public AudioClip audio1, audio2, clap;
     public TMP_Text selectionText;
+    
     
     private Camera mainCamera;
     private bool canInteract;
@@ -36,6 +38,8 @@ public class IntroScript : MonoBehaviour
             if (hit.transform.CompareTag("BlueBall"))
             {
                 blueLight.intensity = 5f;
+                audioSource2.clip = clap;
+                audioSource2.Play();
                 if (Input.GetMouseButtonDown(0))
                 {
                     PlayerPrefs.SetInt("PlayerColor", 0);
@@ -45,9 +49,13 @@ public class IntroScript : MonoBehaviour
             else if (hit.transform.CompareTag("RedBall"))
             {
                 redLight.intensity = 5f;
+                audioSource2.clip = clap;
+                audioSource2.Play(); 
                 if (Input.GetMouseButtonDown(0))
                 {
                     PlayerPrefs.SetInt("PlayerColor", 1);
+                    audioSource.clip = clap;
+                    audioSource.Play();
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
                 }
             }
