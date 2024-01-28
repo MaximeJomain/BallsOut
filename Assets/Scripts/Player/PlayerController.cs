@@ -1,6 +1,4 @@
 using Cinemachine;
-using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,6 +7,8 @@ public class PlayerController : MonoBehaviour
     public CinemachineFreeLook freeLookCamera;
     public float movementSpeed, cameraSpeed;
     public Material blueMaterial, redMaterial;
+    public GameObject explosionPrefab;
+    public AudioClip explosionSound;
     
     [HideInInspector]
     public bool invertControls, canMove, canJump, eventBlockTime;
@@ -105,6 +105,8 @@ public class PlayerController : MonoBehaviour
                 level3.PlayAudioCoroutine(2);
                 level3.hasJumped = true;
                 respawnPoint.RespawnPlayer();
+                Instantiate(explosionPrefab, transform.position, transform.rotation);
+                AudioSource.PlayClipAtPoint(explosionSound, transform.position);
                 Destroy(gameObject);
             }
         }
