@@ -4,29 +4,28 @@ using UnityEngine;
 
 public class TriggerSingleSound : MonoBehaviour
 {
+    public AudioClip audioClip;
+    public bool destroyAfterPlay;
 
     private AudioSource audioSource;
-
-    [SerializeField]
-    private AudioClip audioClip;
-
-    void Awake()
+    private Collider triggerCollider;
+    
+    public void Awake()
     {
         audioSource = GetComponent<AudioSource>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        triggerCollider = GetComponent<Collider>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            audioSource.clip = audioClip;
-            audioSource.Play();
+            audioSource.PlayOneShot(audioClip);
+
+            if (destroyAfterPlay)
+            {
+                triggerCollider.enabled = false;
+            }
         }
     }
 }
