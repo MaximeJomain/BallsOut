@@ -53,6 +53,9 @@ public class TeleportToRandomPoint : MonoBehaviour
     [SerializeField]
     private GameObject spawnPoint;
 
+    [SerializeField]
+    private GameObject wallToDisable;
+
     #endregion
 
     // Start is called before the first frame update
@@ -81,6 +84,7 @@ public class TeleportToRandomPoint : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.F))
             {
+                wallToDisable.SetActive(false);
                 GetRandomPoint(randomPointList);
                 isTeleportActivate = false;
                 alreadyTeleported = true;
