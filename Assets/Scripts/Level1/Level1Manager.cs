@@ -34,7 +34,8 @@ public class Level1Manager : MonoBehaviour
     {
        
         player = GameObject.FindWithTag("Player");
-        player.GetComponent<PlayerController>().enabled = false;
+        player.GetComponent<PlayerController>().canMove = false;
+        player.GetComponent<PlayerController>().eventBlockTime = true;
 
         StartCoroutine(WaitIntro());
     }
@@ -53,7 +54,8 @@ public class Level1Manager : MonoBehaviour
 
             if (deathNumber == 0)
             {
-                player.GetComponent<PlayerController>().enabled = false;
+                player.GetComponent<PlayerController>().canMove = false;
+                player.GetComponent<PlayerController>().eventBlockTime = true;
                 audioSource.clip = audioClip2;
                 audioSource.Play();
 
@@ -61,7 +63,8 @@ public class Level1Manager : MonoBehaviour
             }
             else if (deathNumber == 1)
             {
-                player.GetComponent<PlayerController>().enabled = false;
+                player.GetComponent<PlayerController>().canMove = false;
+                player.GetComponent<PlayerController>().eventBlockTime = true;
                 audioSource.clip = audioClip4;
                 audioSource.Play();
 
@@ -74,7 +77,8 @@ public class Level1Manager : MonoBehaviour
     {
         yield return new WaitForSeconds(16.0f);
 
-        player.GetComponent<PlayerController>().enabled = true;
+        player.GetComponent<PlayerController>().canMove = true;
+        player.GetComponent<PlayerController>().eventBlockTime = false;
     }
 
     IEnumerator WaitDialog(float duration)

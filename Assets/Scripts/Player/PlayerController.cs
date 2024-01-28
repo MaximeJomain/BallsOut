@@ -33,7 +33,6 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         meshRenderer.material = PlayerPrefs.GetInt("PlayerColor", 0) == 0 ? blueMaterial : redMaterial;
-        PlayerPrefs.GetInt("PlayerColor", 0);
         invertControls = false;
         canJump = false;
     }
