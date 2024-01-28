@@ -396,14 +396,14 @@ PrefabInstance:
     - target: {fileID: 6864775657846583926, guid: 2fa5a34e6b14d4ed79335966ead17f20, type: 3}
       propertyPath: audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: b36720c5d8c21cf448c7770a26e14582, type: 3}
+      objectReference: {fileID: 8300000, guid: 6c7b96fa066a80b4f8334a8ee80a7e27, type: 3}
     - target: {fileID: 6864775657846583926, guid: 2fa5a34e6b14d4ed79335966ead17f20, type: 3}
       propertyPath: soloTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6864775657846583926, guid: 2fa5a34e6b14d4ed79335966ead17f20, type: 3}
       propertyPath: notListening
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6864775657846583926, guid: 2fa5a34e6b14d4ed79335966ead17f20, type: 3}
       propertyPath: audioClipNotListening
