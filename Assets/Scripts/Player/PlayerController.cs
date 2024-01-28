@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float movementSpeed, cameraSpeed;
     public Material blueMaterial, redMaterial;
     
+    [HideInInspector]
     public bool invertControls, canMove, canJump, eventBlockTime;
     
     private Vector2 moveInput, lookInput;

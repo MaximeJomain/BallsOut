@@ -400,8 +400,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   freeLookCamera: {fileID: 9021889047609193542}
-  movementSpeed: 25
-  cameraSpeed: 1
+  movementSpeed: 35
+  cameraSpeed: 2
   blueMaterial: {fileID: 2100000, guid: af388ac246772d04daedaa22ac314257, type: 2}
   redMaterial: {fileID: 2100000, guid: 98922bbb326f9d84fb94b609fa3f5b99, type: 2}
   invertControls: 0

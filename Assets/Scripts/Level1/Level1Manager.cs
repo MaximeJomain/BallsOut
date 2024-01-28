@@ -9,7 +9,7 @@ public class Level1Manager : MonoBehaviour
     [SerializeField]
     private GameObject deathZone;
 
-    public GameObject player;
+    public PlayerController player;
 
     [SerializeField]
     private AudioClip audioClip1;
@@ -33,19 +33,12 @@ public class Level1Manager : MonoBehaviour
     void Start()
     {
         RenderSettings.ambientIntensity = 1f;
-        player = GameObject.FindWithTag("Player");
-        player.GetComponent<PlayerController>().canMove = false;
-        player.GetComponent<PlayerController>().eventBlockTime = true;
+        player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+        player.canMove = false;
+        player.eventBlockTime = true;
 
         StartCoroutine(WaitIntro());
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -54,8 +47,8 @@ public class Level1Manager : MonoBehaviour
 
             if (deathNumber == 0)
             {
-                player.GetComponent<PlayerController>().canMove = false;
-                player.GetComponent<PlayerController>().eventBlockTime = true;
+                player.canMove = false;
+                player.eventBlockTime = true;
                 audioSource.clip = audioClip2;
                 audioSource.Play();
 
@@ -63,8 +56,9 @@ public class Level1Manager : MonoBehaviour
             }
             else if (deathNumber == 1)
             {
-                player.GetComponent<PlayerController>().canMove = false;
-                player.GetComponent<PlayerController>().eventBlockTime = true;
+                player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+                player.canMove = false;
+                player.eventBlockTime = true;
                 audioSource.clip = audioClip4;
                 audioSource.Play();
 
@@ -77,8 +71,8 @@ public class Level1Manager : MonoBehaviour
     {
         yield return new WaitForSeconds(16.0f);
 
-        player.GetComponent<PlayerController>().canMove = true;
-        player.GetComponent<PlayerController>().eventBlockTime = false;
+        player.canMove = true;
+        player.eventBlockTime = false;
     }
 
     IEnumerator WaitDialog(float duration)
