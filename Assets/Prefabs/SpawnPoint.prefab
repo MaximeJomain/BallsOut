@@ -49,8 +49,8 @@ MonoBehaviour:
   eventScriptList: []
   respawnTime: 0
   playerPrefab: {fileID: 1771489509401561049, guid: 12e52097bb513e346972d096c5e4b3ec, type: 3}
-  particlesPrefab: {fileID: 0}
-  particles: {fileID: 0}
+  particlesPrefab: {fileID: 7838782321287478043, guid: 33ef2eb5a779d4332847e515779f2b98, type: 3}
+  particles: {fileID: 1826868137272255879}
 --- !u!82 &3034403444932899365
 AudioSource:
   m_ObjectHideFlags: 0

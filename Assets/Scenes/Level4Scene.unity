@@ -1275,8 +1275,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7b03c3058c3f40cd9eb7cc31392b47e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particlesPrefab: {fileID: 7759690355232654750, guid: 291b32a6f7bf844f5a0289f9abfbb929, type: 3}
-  particles: {fileID: 2055643138}
 --- !u!1 &1141286591
 GameObject:
   m_ObjectHideFlags: 0
@@ -1963,6 +1961,11 @@ Transform:
   - {fileID: 267328047}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1766996739 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6529517302390322643, guid: bc890a3b00aa8448c93831b7948e79aa, type: 3}
+  m_PrefabInstance: {fileID: 2023658466}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1783947970
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2501,6 +2504,7 @@ MonoBehaviour:
   isSuicidActivate: 0
   index: -1
   spawnPoint: {fileID: 1257209549}
+  wallToDisable: {fileID: 1766996739}
 --- !u!135 &2021873047
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2706,11 +2710,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc890a3b00aa8448c93831b7948e79aa, type: 3}
---- !u!1 &2055643138 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6012946279341596867, guid: c7f35e19cf6de4a93bdf379df2a2d2a9, type: 3}
-  m_PrefabInstance: {fileID: 1378022519}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2060613790
 PrefabInstance:
   m_ObjectHideFlags: 0
