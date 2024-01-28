@@ -28,6 +28,7 @@ public class TriggerEvent : MonoBehaviour
     [Header("Audio")]
     public AudioClip audio1;
     public AudioClip audio2;
+    public AudioClip rrrrrrrrr;
     public float soundWaitTime;
     private AudioSource audioSource;
 
@@ -71,10 +72,9 @@ public class TriggerEvent : MonoBehaviour
             var fractionOfJourney = distCovered / _journeyLength;
             // Set our position as a fraction of the distance between the markers.
             wall.position = Vector3.Lerp(wall.position, _diseaperPosition, fractionOfJourney);
-            if (wall.position == _initialPosition)
+            if (wall.position == _diseaperPosition)
             {
                 _state = State.None;
-                
             }
         }
     }
@@ -110,6 +110,26 @@ public class TriggerEvent : MonoBehaviour
         yield return new WaitForSeconds(audioSource.clip.length);
         yield return new WaitForSeconds(soundWaitTime);
         
+        audioSource.clip = rrrrrrrrr;
+        audioSource.Play();
+        yield return new WaitForSeconds(audioSource.clip.length);
+        audioSource.clip = rrrrrrrrr;
+        audioSource.Play();
+        yield return new WaitForSeconds(audioSource.clip.length);
+        audioSource.clip = rrrrrrrrr;
+        audioSource.Play();
+        yield return new WaitForSeconds(audioSource.clip.length);
+        audioSource.clip = rrrrrrrrr;
+        audioSource.Play();
+        yield return new WaitForSeconds(audioSource.clip.length);
+        audioSource.clip = rrrrrrrrr;
+        audioSource.Play();
+        yield return new WaitForSeconds(audioSource.clip.length);
+        audioSource.clip = rrrrrrrrr;
+        audioSource.Play();
+        yield return new WaitForSeconds(audioSource.clip.length);
+        yield return new WaitForSeconds(soundWaitTime);
+
         audioSource.clip = audio2;
         audioSource.Play();
         yield return new WaitForSeconds(audioSource.clip.length);

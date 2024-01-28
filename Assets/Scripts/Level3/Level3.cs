@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Level3 : MonoBehaviour
 {
-    public GameObject obstacle;
+    public GameObject obstacle, wall2;
     public bool hasJumped;
 
     private PlayerController playerController;
@@ -14,6 +14,8 @@ public class Level3 : MonoBehaviour
     public AudioClip jumpStart;
     public AudioClip jumpMiddle;
     public AudioClip jumpEnd;
+    public AudioClip ahahah;
+    public AudioClip justKidding;
     private AudioSource audioSource;
 
     private void Awake()
@@ -53,6 +55,18 @@ public class Level3 : MonoBehaviour
 
         audioSource.clip = jumpEnd;
         audioSource.Play();
+    }
+    
+    private IEnumerator AudioCoroutine3()
+    {
+        audioSource.clip = ahahah;
+        audioSource.Play();
+        yield return new WaitForSeconds(audioSource.clip.length);
+        yield return new WaitForSeconds(1f);
+
+        audioSource.clip = justKidding;
+        audioSource.Play();
+        Destroy(wall2);
     }
 
 
