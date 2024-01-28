@@ -32,7 +32,7 @@ public class Level1Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+        RenderSettings.ambientIntensity = 1f;
         player = GameObject.FindWithTag("Player");
         player.GetComponent<PlayerController>().canMove = false;
         player.GetComponent<PlayerController>().eventBlockTime = true;

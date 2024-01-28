@@ -83,10 +83,6 @@ public class PlayerController : MonoBehaviour
         {
             canMove = true;
         }
-        else
-        {
-            canMove = false;
-        }
     }
     
     private void OnCollisionExit(Collision other)
