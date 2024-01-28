@@ -23,8 +23,13 @@ public class TriggerEvent : MonoBehaviour
     // Movement speed in units per second.
     public float speed = 10.0F;
     public float speedReturn = 0.1F;
-
     private State _state = State.None;
+
+    [Header("Audio")]
+    public AudioClip audio1;
+    public AudioClip audio2;
+    public float soundWaitTime;
+    private AudioSource audioSource;
 
     private enum State
     {
@@ -32,7 +37,12 @@ public class TriggerEvent : MonoBehaviour
         Forward,
         Back
     }
-    
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     private void Update()
     {
         if (_state == State.Forward)
@@ -80,7 +90,28 @@ public class TriggerEvent : MonoBehaviour
             _journeyLength = Vector3.Distance(_initialPosition, _newPosition);
             _state = State.Forward;
            _firstContact = false;
-           //ToDo: Play sound for mistake key tapped from narrator
+           StartCoroutine(AudioCoroutine());
         } 
+    }
+    
+    private IEnumerator AudioCoroutine() {
+        audioSource.clip = audio1;
+        audioSource.Play();
+        yield return new WaitForSeconds(audioSource.clip.length);
+        yield return new WaitForSeconds(soundWaitTime);
+        
+        audioSource.clip = audio2;
+        audioSource.Play();
+        yield return new WaitForSeconds(audioSource.clip.length);
+        yield return new WaitForSeconds(soundWaitTime);
+        
+        audioSource.clip = audio2;
+        audioSource.Play();
+        yield return new WaitForSeconds(audioSource.clip.length);
+        yield return new WaitForSeconds(soundWaitTime);
+        
+        audioSource.clip = audio2;
+        audioSource.Play();
+        yield return new WaitForSeconds(audioSource.clip.length);
     }
 }

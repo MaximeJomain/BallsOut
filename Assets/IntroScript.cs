@@ -7,8 +7,9 @@ public class IntroScript : MonoBehaviour
 {
     public Light blueLight, redLight;
     public AudioSource audioSource;
-    public AudioClip audio1, audio2;
+    public AudioClip audio1, audio2, clap;
     public TMP_Text selectionText;
+    
     
     private Camera mainCamera;
     private bool canInteract;
