@@ -15,10 +15,14 @@ public class SpawnPlayer : MonoBehaviour
     
     [SerializeField]
     private GameObject playerPrefab;
-    
-    public void Start()
+
+    public void Awake()
     {
         InstantiatePlayer();
+    }
+
+    public void Start()
+    {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false; 
     }
