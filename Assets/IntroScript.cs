@@ -40,6 +40,7 @@ public class IntroScript : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     PlayerPrefs.SetInt("PlayerColor", 0);
+                    PlayerPrefs.Save();
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
                 }
             }
@@ -49,6 +50,7 @@ public class IntroScript : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     PlayerPrefs.SetInt("PlayerColor", 1);
+                    PlayerPrefs.Save();
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
                 }
             }
