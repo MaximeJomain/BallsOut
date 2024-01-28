@@ -152,7 +152,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -245,11 +245,11 @@ Transform:
   m_GameObject: {fileID: 254840605}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21.373074, y: -49.679893, z: 1.3041091}
+  m_LocalPosition: {x: -0.5998039, y: -1.1576309, z: -2.836392}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1019314704}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &462205631
 GameObject:
@@ -351,11 +351,11 @@ Transform:
   m_GameObject: {fileID: 462205631}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.45000076, z: -2.34}
+  m_LocalPosition: {x: 21.972878, y: -48.07226, z: 1.8005011}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1019314704}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &462205636
 MonoBehaviour:
@@ -503,8 +503,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 612804729}
-  - {fileID: 254840607}
   - {fileID: 1724991331}
+  - {fileID: 462205635}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1653792431
@@ -957,8 +957,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myLight: {fileID: 1724991330}
   audio1: {fileID: 8300000, guid: 42d81c2c9f5cbda428c6eaa5b091387a, type: 3}
+  audioBoom: {fileID: 8300000, guid: 1044ceaa2f4d9714383ef20d081ab0c1, type: 3}
   _audioSource: {fileID: 1738631334}
+  _audioSourceBoom: {fileID: 254840606}
   _all: {fileID: 1019314703}
+  _ball: {fileID: 462205631}
+  _explosionPrefab: {fileID: 757555626850432114, guid: 458629d9f08fc42aabd31d6cfbfe10ed, type: 3}
 --- !u!4 &1738631336
 Transform:
   m_ObjectHideFlags: 0
@@ -1181,4 +1185,4 @@ SceneRoots:
   - {fileID: 1738631336}
   - {fileID: 1019314704}
   - {fileID: 2039344651}
-  - {fileID: 462205635}
+  - {fileID: 254840607}

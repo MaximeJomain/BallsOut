@@ -17,11 +17,15 @@ public class EndScript : MonoBehaviour
 
     public Light myLight;
 
-    public AudioClip audio1;
+    public AudioClip audio1, audioBoom;
 
-    public AudioSource _audioSource;
+    public AudioSource _audioSource, _audioSourceBoom;
 
     public GameObject _all;
+
+    public GameObject _ball;
+
+    public GameObject _explosionPrefab;
 
     private void Awake()
     {
@@ -73,14 +77,17 @@ public class EndScript : MonoBehaviour
         yield return new WaitForSeconds(2f);
         flicking = false;
         myLight.intensity = 0f;
+        Instantiate(_explosionPrefab, _ball.transform.position, _ball.transform.rotation);
+        _audioSourceBoom.clip = audioBoom;
+        _audioSourceBoom.Play();
         Destroy(_all);
-        StartCoroutine(ReturnIntro());
+        StartCoroutine(ReturnIntro(audioBoom.length));
 
     }
 
-    IEnumerator ReturnIntro()
+    IEnumerator ReturnIntro(float duration)
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(duration);
         SceneManager.LoadScene(0);
 
     }
