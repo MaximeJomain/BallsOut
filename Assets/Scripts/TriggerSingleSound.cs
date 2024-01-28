@@ -5,6 +5,7 @@ using UnityEngine;
 public class TriggerSingleSound : MonoBehaviour
 {
 
+    
     private AudioSource audioSource;
 
     [SerializeField]

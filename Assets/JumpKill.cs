@@ -3,17 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JumpKill : MonoBehaviour
+public class JumpKill : EventScript
 {
     private PlayerController player;
-
-    // private void Update()
-    // {
-    //     if (!player)
-    //     {
-    //         throw new NotImplementedException();
-    //     }
-    // }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -23,5 +15,10 @@ public class JumpKill : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         player.canJump = false;
+    }
+
+    public override void SetPlayerInstance(PlayerController playerInstance)
+    {
+        player = playerInstance;
     }
 }

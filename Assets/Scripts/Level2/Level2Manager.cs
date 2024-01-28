@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,46 +23,10 @@ public class Level2Manager : MonoBehaviour
     private AudioClip audioClipStart2;
     
     [SerializeField]
-    private AudioClip audioClipTurn1False;
+    private AudioClip audioClipFinsih1;
 
     [SerializeField]
-    private AudioClip audioClipTurn1Right;
-    
-    [SerializeField]
-    private AudioClip audioClipTurn2False;
-
-    [SerializeField]
-    private AudioClip audioClipTurn2Right;
-    
-    [SerializeField]
-    private AudioClip audioClipTurn3False;
-
-    [SerializeField]
-    private AudioClip audioClipTurn3Right;
-    
-    [SerializeField]
-    private AudioClip audioClipTurn4False;
-
-    [SerializeField]
-    private AudioClip audioClipTurn4Right;
-    
-    [SerializeField]
-    private AudioClip audioClipTurn5False;
-
-    [SerializeField]
-    private AudioClip audioClipTurn5Right;
-    
-    [SerializeField]
-    private AudioClip audioClipTurn6False;
-
-    [SerializeField]
-    private AudioClip audioClipTurn6Right;
-    
-    [SerializeField]
-    private AudioClip audioClipTurn7False;
-
-    [SerializeField]
-    private AudioClip audioClipTurn7Right;
+    private AudioClip audioClipFinish2;
 
     [SerializeField]
     private AudioSource audioSource;
@@ -92,6 +57,18 @@ public class Level2Manager : MonoBehaviour
         StartCoroutine(WaitSpeech(audioSource.clip.length));
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            audioSource.clip = !_gameManager.lvl2NotListening ? audioClipFinsih1 : audioClipFinish2;
+            controller.eventBlockTime = true;
+            controller.canMove = false;
+            audioSource.Play();
+            StartCoroutine(WaitFinish(audioSource.clip.length));
+        }
+    }
+
     IEnumerator WaitSpeech(float duration)
     {
         yield return new WaitForSeconds(duration);
@@ -106,6 +83,12 @@ public class Level2Manager : MonoBehaviour
             controller.eventBlockTime = false;
             controller.canMove = true;
         }
+    }
+
+    IEnumerator WaitFinish(float duration)
+    {
+        yield return new WaitForSeconds(duration);
         
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
