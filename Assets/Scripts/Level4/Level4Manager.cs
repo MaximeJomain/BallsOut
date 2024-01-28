@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Level4Manager : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class Level4Manager : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Yo");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }
