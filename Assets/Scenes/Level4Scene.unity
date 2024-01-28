@@ -2332,19 +2332,19 @@ MonoBehaviour:
   - {fileID: 507448371}
   explosionPrefab: {fileID: 757555626850432114, guid: 458629d9f08fc42aabd31d6cfbfe10ed, type: 3}
   audioClip: {fileID: 8300000, guid: 09dc4012020697f418a8a47a28da40bc, type: 3}
-  afterFClip: {fileID: 8300000, guid: 2a3822878c2105d47b912ebcd56e19b2, type: 3}
-  afterTClip: {fileID: 8300000, guid: 9e315969532f2514fadf530a2dd06960, type: 3}
+  afterFClip: {fileID: 8300000, guid: 236f1f808c93346de96e0653b499a60e, type: 3}
+  afterTClip: {fileID: 8300000, guid: 216a716368c1c48fd887d23a86d84606, type: 3}
   audioClipList:
-  - {fileID: 8300000, guid: a311e870d8bd5d04a822d07e41091534, type: 3}
-  - {fileID: 8300000, guid: cf2813486117ae0478df8fb794b9118a, type: 3}
-  - {fileID: 8300000, guid: 885b9dd6f1f2f8946802add140e242f8, type: 3}
-  - {fileID: 8300000, guid: 9356b2a10e071d34a9a7fca8499804b5, type: 3}
-  - {fileID: 8300000, guid: 1fae210143fe5f14a84dc170efe8fdaa, type: 3}
-  - {fileID: 8300000, guid: 34553e30f7b6a464db653a140606f836, type: 3}
+  - {fileID: 8300000, guid: 8b140fca1dd314072ab5702a5f608bc6, type: 3}
+  - {fileID: 8300000, guid: 8439eea406e4649fab8e23edf1269c8a, type: 3}
+  - {fileID: 8300000, guid: 01175a7f0a9ea4e6db350d49cfb71417, type: 3}
+  - {fileID: 8300000, guid: c24943a6b8fcc430ea48eedbafa40457, type: 3}
+  - {fileID: 8300000, guid: 7ae480bd821644db5a912f0f2e29753d, type: 3}
+  - {fileID: 8300000, guid: 90d32288afa8348efbd76d6aeeb68b35, type: 3}
   audioAfterFClipList:
-  - {fileID: 8300000, guid: 57f9436291d514648be5957e56ad9811, type: 3}
-  - {fileID: 8300000, guid: 7a28340b9a419b9459119d7f92aaff93, type: 3}
-  - {fileID: 8300000, guid: 77e4e15039df80348b0fb067c02cdf55, type: 3}
+  - {fileID: 8300000, guid: 800a971f18b5d40d1b3edac56a136594, type: 3}
+  - {fileID: 8300000, guid: 18422c79e059a4d309fdb8f21213e059, type: 3}
+  - {fileID: 8300000, guid: 8df239ef077a54eda90c18a08facd218, type: 3}
   isTeleportActivate: 0
   isSuicidActivate: 0
   index: -1
