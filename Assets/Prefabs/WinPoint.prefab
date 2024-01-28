@@ -41,7 +41,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5518476665418647215}
   - component: {fileID: 5542576162991599348}
-  - component: {fileID: -2820905949940175926}
   m_Layer: 0
   m_Name: WinPoint
   m_TagString: Untagged
@@ -86,17 +85,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 8.918625, y: 2, z: 19.43042}
   m_Center: {x: -3.4593124, y: 0, z: 0.9957657}
---- !u!114 &-2820905949940175926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7260142986524678225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82f290aaf000f46dca38ae7ab1e6667a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particlesPrefab: {fileID: 7759690355232654750, guid: 291b32a6f7bf844f5a0289f9abfbb929, type: 3}
-  particles: {fileID: 6012946279341596867}

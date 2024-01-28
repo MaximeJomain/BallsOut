@@ -16,12 +16,6 @@ public class SpawnPlayer : MonoBehaviour
     [SerializeField]
     private GameObject playerPrefab;
 
-    [SerializeField]
-    private GameObject particlesPrefab;
-
-    [SerializeField]
-    private GameObject particles;
-
     public void Awake()
     {
         InstantiatePlayer();
@@ -31,8 +25,6 @@ public class SpawnPlayer : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
-        Instantiate(particlesPrefab, particles.transform.position, particles.transform.rotation);
     }
 
     public void InstantiatePlayer()
