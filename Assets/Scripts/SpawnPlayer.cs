@@ -24,7 +24,7 @@ public class SpawnPlayer : MonoBehaviour
     public void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false; 
+        Cursor.visible = false;
     }
 
     public void InstantiatePlayer()

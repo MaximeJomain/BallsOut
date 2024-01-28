@@ -23,8 +23,11 @@ public class Level1Manager : MonoBehaviour
     [SerializeField]
     private AudioSource audioSource;
 
+    public AudioSource bgMusic;
+
     private void Awake()
     {
+        DontDestroyOnLoad(bgMusic);
         audioSource.clip = audioClip1;
         audioSource.Play();
     }
@@ -69,8 +72,10 @@ public class Level1Manager : MonoBehaviour
 
     IEnumerator WaitIntro()
     {
-        yield return new WaitForSeconds(16.0f);
-
+        yield return new WaitForSeconds(14.0f);
+        bgMusic.Play();
+        
+        yield return new WaitForSeconds(2f);
         player.canMove = true;
         player.eventBlockTime = false;
     }
